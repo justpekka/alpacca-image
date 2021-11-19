@@ -6,10 +6,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpaca Image</title>
+  <link rel="stylesheet" href="./resources/style.css">
 </head>
 
 <body>
+  <div class="container d-flex">
+    <h1 class="main-title">Alpaca Generator</h1>
 
+    <div class="col alpaca">
+      <img src="./sources/backgrounds/blue50.png" alt="" id="background" class="w-100">
+      <img src="./sources/leg/default.png" alt="" id="leg" class="w-100">
+      <img src="./sources/neck/default.png" alt="" id="neck" class="w-100">
+      <img src="./sources/ears/default.png" alt="" id="ears" class="w-100">
+      <img src="./sources/hair/default.png" alt="" id="hair" class="w-100">
+      <img src="./sources/eyes/default.png" alt="" id="eyes" class="w-100">
+      <img src="./sources/nose.png" alt="" id="nose" class="w-100">
+      <img src="./sources/mouth/default.png" alt="" id="mouth" class="w-100">
+      <img src="./sources/accessories/flower.png" alt="" id="accessories" class="w-100">
+    </div>
+
+    <div class="col settings">
+      <div class="accessories-button">
+        <h3 class="title">Accessorize the Alpaca</h3>
+        
+      </div>
+      
+      <div class="styles-button">
+        <h3 class="title">Style</h3>
+        
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="container random-generate">
+        <button>Random</button>
+        <button>Download</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./resources/index.js"></script>
 </body>
-
 </html>
