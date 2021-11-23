@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpaca Image Generator</title>
-  <link rel="stylesheet" href="./resources/style.css">
+  <link rel="stylesheet" href="./resources/style.css" type="text/css">
 </head>
 
 <body>
@@ -15,32 +15,28 @@
       <h1 class="title">Alpaca Generator</h1>
     
       <div class="col alpaca" id="main-image">
-        <img src="./sources/backgrounds/blue50.png" alt="Default Blue" id="display-background" class="background-images">
-        <img src="./sources/leg/default.png" alt="Default Leg" id="display-leg" class="style-images">
-        <img src="./sources/neck/default.png" alt="Default Neck" id="display-neck" class="style-images">
-        <img src="./sources/ears/default.png" alt="Default Ears" id="display-ears" class="style-images">
-        <img src="./sources/hair/default.png" alt="Default Hair" id="display-hair" class="style-images">
-        <img src="./sources/eyes/default.png" alt="Default Eyes" id="display-eyes" class="style-images">
-        <img src="./sources/nose.png" alt="Default Nose" id="display-nose" class="style-images">
-        <img src="./sources/mouth/default.png" alt="Default Mouth" id="display-mouth" class="style-images">
-        <img src="./sources/accessories/flower.png" alt="Flower Accessories" id="display-accessories" class="style-images">
+        <img src="./sources/backgrounds/blue50.png" alt="Default Blue" id="display-background" data-name="background" class="background-images">
+        <img src="./sources/leg/default.png" alt="Default Leg" id="display-leg" data-name="leg" class="style-images">
+        <img src="./sources/neck/default.png" alt="Default Neck" id="display-neck" data-name="neck" class="style-images">
+        <img src="./sources/ears/default.png" alt="Default Ears" id="display-ears" data-name="ears" class="style-images">
+        <img src="./sources/hair/default.png" alt="Default Hair" id="display-hair" data-name="hair" class="style-images">
+        <img src="./sources/eyes/default.png" alt="Default Eyes" id="display-eyes" data-name="eyes" class="style-images">
+        <img src="./sources/nose.png" alt="Default Nose" id="display-nose" data-name="nose" class="style-images">
+        <img src="./sources/mouth/default.png" alt="Default Mouth" id="display-mouth" data-name="mouth" class="style-images">
+        <img src="./sources/accessories/flower.png" alt="Flower Accessories" id="display-accessories" data-name="accessories" class="style-images">
       </div>
       
       <div class="col settings">
         <div class="accessories-button d-flex">
           <h3 class="title">Accessorize the Alpaca's</h3>
-          <div class="button-container" id="listAccessories">
-            <button class="btn style-btn" id="menu-neck" data-accessories-list="neck" data-toggle="collapse" disabled="disabled">Neck</button>
-            <button class="btn style-btn active" id="menu-hair" data-accessories-list="hair" data-toggle="collapse">Hair</button>
-            <button class="btn style-btn" id="menu-mouth" data-accessories-list="mouth" data-toggle="collapse">Mouth</button>
-            <button class="btn style-btn" id="menu-eyes" data-accessories-list="eyes" data-toggle="collapse">eyes</button>
-            <button class="btn style-btn" id="menu-accessories" data-accessories-list="accessories" data-toggle="collapse">Accessories</button>
+          <div class="button-container" id="list-accessories">
+            <!-- <button class="btn style-btn active" id="menu-hair" data-accessories-list="hair" data-toggle="collapse">Hair</button> -->
           </div>
         </div>
         
         <div class="styles-button d-flex">
           <h3 class="title">Styles</h3>
-          <div class="button-container" id="styleAccessories">
+          <div class="button-container" id="style-accessories">
 
           </div>
         </div>
