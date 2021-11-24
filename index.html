@@ -11,43 +11,41 @@
 
 <body>
   <div class="app">
-    <div class="container d-flex">
-      <h1 class="title">Alpaca Generator</h1>
+    <h1 class="title">Alpaca Generator</h1>
     
-      <div class="col alpaca" id="main-image">
-        <img src="./sources/backgrounds/blue50.png" alt="Default Blue" id="display-background" data-name="background" class="background-images">
-        <img src="./sources/leg/default.png" alt="Default Leg" id="display-leg" data-name="leg" class="style-images">
-        <img src="./sources/neck/default.png" alt="Default Neck" id="display-neck" data-name="neck" class="style-images">
-        <img src="./sources/ears/default.png" alt="Default Ears" id="display-ears" data-name="ears" class="style-images">
-        <img src="./sources/hair/default.png" alt="Default Hair" id="display-hair" data-name="hair" class="style-images">
-        <img src="./sources/eyes/default.png" alt="Default Eyes" id="display-eyes" data-name="eyes" class="style-images">
-        <img src="./sources/nose.png" alt="Default Nose" id="display-nose" data-name="nose" class="style-images">
-        <img src="./sources/mouth/default.png" alt="Default Mouth" id="display-mouth" data-name="mouth" class="style-images">
-        <img src="./sources/accessories/flower.png" alt="Flower Accessories" id="display-accessories" data-name="accessories" class="style-images">
+    <div class="container d-flex">
+      <div class="col m-auto">
+        <div class="alpaca" id="main-image">
+          <img src="./sources/backgrounds/blue50.png" alt="Default Blue" id="display-background" data-name="background" class="background-images">
+          <img src="./sources/leg/default.png" alt="Default Leg" id="display-leg" data-name="leg" class="style-images">
+          <img src="./sources/neck/default.png" alt="Default Neck" id="display-neck" data-name="neck" class="style-images">
+          <img src="./sources/ears/default.png" alt="Default Ears" id="display-ears" data-name="ears" class="style-images">
+          <img src="./sources/hair/default.png" alt="Default Hair" id="display-hair" data-name="hair" class="style-images">
+          <img src="./sources/eyes/default.png" alt="Default Eyes" id="display-eyes" data-name="eyes" class="style-images">
+          <img src="./sources/nose.png" alt="Default Nose" id="display-nose" data-name="nose" class="style-images">
+          <img src="./sources/mouth/default.png" alt="Default Mouth" id="display-mouth" data-name="mouth" class="style-images">
+          <img src="./sources/accessories/flower.png" alt="Flower Accessories" id="display-accessories" data-name="accessories" class="style-images">
+        </div>
+
+        <div class="random-generate">
+          <button class="btn generate-button">&#8986 Random</button>
+          <button class="btn generate-button">&#127750 Download</button>
+        </div>
       </div>
       
-      <div class="col settings">
-        <div class="accessories-button d-flex">
+      <div class="col settings d-flex">
+        <div class="button-container" id="accessories-buttons">
           <h3 class="title">Accessorize the Alpaca's</h3>
-          <div class="button-container" id="list-accessories">
-            <!-- <button class="btn style-btn active" id="menu-hair" data-accessories-list="hair" data-toggle="collapse">Hair</button> -->
-          </div>
+          <button class="btn style-btn active" id="menu-hair" data-accessories-list="hair" data-toggle="collapse">Hair</button>
         </div>
         
-        <div class="styles-button d-flex">
+        <div class="button-container" id="style-buttons">
           <h3 class="title">Styles</h3>
-          <div class="button-container" id="style-accessories">
-
-          </div>
+          <button class="btn style-btn active" id="menu-hair" data-accessories-list="hair" data-toggle="collapse">Hair</button>
         </div>
       </div>
-  
-      <div class="col random-generate">
-        <button class="btn generate-button">&#8986 Random</button>
-        <button class="btn generate-button">&#127750 Download</button>
-      </div>
-
     </div>
+
   </div>
   
   <script src="./resources/index.js"></script>
