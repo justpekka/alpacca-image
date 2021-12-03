@@ -1,8 +1,8 @@
 // <button class="btn style-btn active" id="menu-hair" data-accessories-list="hair" data-toggle="collapse">Hair</button>
 
 const alpacaImages = Array.from(document.querySelector('#main-image').children)
-const accessoriesList = document.querySelector('#accessories-buttons')
-const accessoriesStyle = document.querySelector('#style-buttons')
+const accessoriesList = document.querySelector('.accessories-buttons')
+const accessoriesStyle = document.querySelector('.style-buttons')
 
 // let button;
 // alpacaImages.forEach(i => {
