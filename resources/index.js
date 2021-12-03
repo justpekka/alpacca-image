@@ -9,7 +9,7 @@ const accessoriesStyle = document.querySelector('#style-buttons')
 //   console.log(i.getAttribute('data-name'))
 // })
 
-const para = document.createElement("button");
-const node = document.createTextNode("Hair");
-para.appendChild(node);
-accessoriesList.appendChild(para);
+// const para = document.createElement("button");
+// const node = document.createTextNode("Hair");
+// para.appendChild(node);
+// accessoriesList.appendChild(para);

@@ -124,6 +124,14 @@ body {
 }
 
 
+.collapsed {
+  display: none;
+}
+
+.m-0 {
+  margin: 0;
+}
+
 .settings {
   height: 100%;
   overflow: hidden;

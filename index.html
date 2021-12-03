@@ -16,15 +16,15 @@
     <div class="container d-flex">
       <div class="col m-auto">
         <div class="alpaca" id="main-image">
-          <img src="./sources/backgrounds/blue50.png" alt="Default Blue" id="display-background" data-name="background" class="background-images">
-          <img src="./sources/leg/default.png" alt="Default Leg" id="display-leg" data-name="leg" class="style-images">
-          <img src="./sources/neck/default.png" alt="Default Neck" id="display-neck" data-name="neck" class="style-images">
-          <img src="./sources/ears/default.png" alt="Default Ears" id="display-ears" data-name="ears" class="style-images">
-          <img src="./sources/hair/default.png" alt="Default Hair" id="display-hair" data-name="hair" class="style-images">
-          <img src="./sources/eyes/default.png" alt="Default Eyes" id="display-eyes" data-name="eyes" class="style-images">
-          <img src="./sources/nose.png" alt="Default Nose" id="display-nose" data-name="nose" class="style-images">
-          <img src="./sources/mouth/default.png" alt="Default Mouth" id="display-mouth" data-name="mouth" class="style-images">
-          <img src="./sources/accessories/flower.png" alt="Flower Accessories" id="display-accessories" data-name="accessories" class="style-images">
+          <img src="./sources/backgrounds/blue50.png" alt="Default Blue" id="display-background" class="background-images">
+          <img src="./sources/leg/default.png" alt="Default Leg" id="display-leg" class="style-images">
+          <img src="./sources/neck/default.png" alt="Default Neck" id="display-neck" class="style-images">
+          <img src="./sources/ears/default.png" alt="Default Ears" id="display-ears" class="style-images">
+          <img src="./sources/hair/default.png" alt="Default Hair" id="display-hair" class="style-images">
+          <img src="./sources/eyes/default.png" alt="Default Eyes" id="display-eyes" class="style-images">
+          <img src="./sources/nose.png" alt="Default Nose" id="display-nose" class="style-images">
+          <img src="./sources/mouth/default.png" alt="Default Mouth" id="display-mouth" class="style-images">
+          <img src="./sources/accessories/flower.png" alt="Flower Accessories" id="display-accessories" class="style-images">
         </div>
 
         <div class="random-generate">
@@ -34,14 +34,87 @@
       </div>
       
       <div class="col settings d-flex">
-        <div class="button-container" id="accessories-buttons">
-          <h3 class="title">Accessorize the Alpaca's</h3>
-          <button class="btn style-btn active" id="menu-hair" data-accessories-list="hair" data-toggle="collapse">Hair</button>
+        <h3 class="title m-0">Accessorize the Alpaca's</h3>
+        <div class="button-container">
+          <button class="btn style-btn active" id="menu-background" data-name="background" data-toggle="collapse">Background</button>
+          <button class="btn style-btn" id="menu-hair" data-name="hair" data-toggle="collapse">Hair</button>
+          <button class="btn style-btn" id="menu-eyes" data-name="eyes" data-toggle="collapse">Eyes</button>
+          <button class="btn style-btn" id="menu-ears" data-name="ears" data-toggle="collapse">Ears</button>
+          <button class="btn style-btn" id="menu-neck" data-name="neck" data-toggle="collapse">Neck</button>
+          <button class="btn style-btn" id="menu-mouth" data-name="mouth" data-toggle="collapse">Mouth</button>
+          <button class="btn style-btn" id="menu-leg" data-name="leg" data-toggle="collapse">Leg</button>
+          <button class="btn style-btn" id="menu-accessories" data-name="accessories" data-toggle="collapse">Accessories</button>
         </div>
         
-        <div class="button-container" id="style-buttons">
-          <h3 class="title">Styles</h3>
-          <button class="btn style-btn active" id="menu-hair" data-accessories-list="hair" data-toggle="collapse">Hair</button>
+        <h3 class="title m-0">Styles</h3>
+        <div class="button-container" id="style-background" data-menu="background">
+          <button class="btn style-btn active" data-name="blue50">Blue 50</button>
+          <button class="btn style-btn" data-name="blue60">Blue 60</button>
+          <button class="btn style-btn" data-name="blue70">Blue 70</button>
+          <button class="btn style-btn" data-name="darkblue30">Dark Blue 30</button>
+          <button class="btn style-btn" data-name="darkblue50">Dark Blue 50</button>
+          <button class="btn style-btn" data-name="darkblue70">Dark Blue 70</button>
+          <button class="btn style-btn" data-name="green50">Green 50</button>
+          <button class="btn style-btn" data-name="green60">Green 60</button>
+          <button class="btn style-btn" data-name="green70">Green 70</button>
+          <button class="btn style-btn" data-name="gray40">Gray 40</button>
+          <button class="btn style-btn" data-name="gray70">Gray 70</button>
+          <button class="btn style-btn" data-name="gray80">Gray 80</button>
+          <button class="btn style-btn" data-name="red50">red 50</button>
+          <button class="btn style-btn" data-name="red60">red 60</button>
+          <button class="btn style-btn" data-name="red70">red 70</button>
+          <button class="btn style-btn" data-name="yellow50">Yellow 50</button>
+          <button class="btn style-btn" data-name="yellow60">Yellow 60</button>
+          <button class="btn style-btn" data-name="yellow70">Yellow 70</button>
+        </div>
+        <div class="button-container collapsed" id="style-hair" data-menu="hair">
+          <button class="btn style-btn active" data-name="default">default</button>
+          <button class="btn style-btn" data-name="bang">Bang</button>
+          <button class="btn style-btn" data-name="curls">Curls</button>
+          <button class="btn style-btn" data-name="elegant">Elegant</button>
+          <button class="btn style-btn" data-name="fancy">Fancy</button>
+          <button class="btn style-btn" data-name="quiff">Quiff</button>
+          <button class="btn style-btn" data-name="short">Short</button>
+        </div>
+        <div class="button-container collapsed" id="style-eyes" data-menu="eyes">
+          <button class="btn style-btn active" data-name="default">default</button>
+          <button class="btn style-btn" data-name="angry">Angry</button>
+          <button class="btn style-btn" data-name="naughty">Naughty</button>
+          <button class="btn style-btn" data-name="panda">Panda</button>
+          <button class="btn style-btn" data-name="smart">Smart</button>
+          <button class="btn style-btn" data-name="star">Star</button>
+        </div>
+        <div class="button-container collapsed" id="style-ears" data-menu="ears">
+          <button class="btn style-btn active" data-name="default">default</button>
+          <button class="btn style-btn" data-name="tilt-backward">Tilt Backward</button>
+          <button class="btn style-btn" data-name="tilt-forward">Tilt Forward</button>
+        </div>
+        <div class="button-container collapsed" id="style-neck" data-menu="neck">
+          <button class="btn style-btn active" data-name="default">default</button>
+          <button class="btn style-btn" data-name="bend-backward">Bend Backward</button>
+          <button class="btn style-btn" data-name="bend-forward">Bend Forward</button>
+          <button class="btn style-btn" data-name="thick">Thick</button>
+        </div>
+        <div class="button-container collapsed" id="style-mouth" data-menu="mouth">
+          <button class="btn style-btn active" data-name="default">default</button>
+          <button class="btn style-btn" data-name="astonished">Astonished</button>
+          <button class="btn style-btn" data-name="eating">Eating</button>
+          <button class="btn style-btn" data-name="laugh">Laugh</button>
+          <button class="btn style-btn" data-name="tongue">Tongue</button>
+        </div>
+        <div class="button-container collapsed" id="style-leg" data-menu="leg">
+          <button class="btn style-btn active" data-name="default">default</button>
+          <button class="btn style-btn" data-name="bubble-tea">Bubble Tea</button>
+          <button class="btn style-btn" data-name="cookie">Cookie</button>
+          <button class="btn style-btn" data-name="game-console">Game Console</button>
+          <button class="btn style-btn" data-name="tilt-backward">Tilt Backward</button>
+          <button class="btn style-btn" data-name="tilt-forward">Tilt Forward</button>
+        </div>
+        <div class="button-container collapsed" id="style-accessories" data-menu="accessories">
+          <button class="btn style-btn" data-name="earings">earings</button>
+          <button class="btn style-btn" data-name="flower">Flower</button>
+          <button class="btn style-btn" data-name="glasses">Glasses</button>
+          <button class="btn style-btn" data-name="headphone">Headphone</button>
         </div>
       </div>
     </div>
