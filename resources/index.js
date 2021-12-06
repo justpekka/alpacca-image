@@ -11,44 +11,57 @@ function btnFunction (target) {
     e.preventDefault()
     
     if(toggleStatus == "collapse") {
-      if(localStorage.getItem("styleMenu")) document.querySelector('#'+localStorage.getItem("styleMenu")).classList.add("collapsed")
-      if(localStorage.getItem("currentButton")) document.querySelector('#'+localStorage.getItem("currentButton")).classList.remove("active")
+      if(document.getElementById(localStorage.getItem("currentButton"))) document.getElementById(localStorage.getItem("currentButton")).classList.remove("active")
+      if(document.getElementById(localStorage.getItem("styleMenu"))) document.getElementById(localStorage.getItem("styleMenu")).classList.add("collapsed")
       
       target.classList.toggle("active")
       menuTarget.classList.toggle("collapsed")
 
       localStorage.setItem("styleMenu", menuTarget.id)
       localStorage.setItem("currentButton", target.id)
+
+      return console.log(localStorage, "migration success!")
     }
   })
 }
 
-function btnImageFunction(button) {
+function btnImageFunction(button, parent) {
+  let imageTarget = "display-" + parent.getAttribute('data-menu')
+  let imgTag = document.getElementById(imageTarget)
+
   button.addEventListener('click', e => {
     e.preventDefault()
 
-    console.log(button)
+    // imgTag
+
   })
 }
 
 
 window.addEventListener('load', () => {
-  if(localStorage.getItem("currentButton")) document.querySelector('#'+localStorage.getItem("currentButton")).classList.add("active")
-  if(localStorage.getItem("styleMenu")) document.querySelector('#'+localStorage.getItem("styleMenu")).classList.remove("collapsed")
+  let activeButton = document.getElementById(localStorage.getItem("currentButton"))
+  let activeMenu = document.getElementById(localStorage.getItem("styleMenu"))
+
+  if(activeButton) activeButton.classList.add("active")
+  if(activeMenu) activeMenu.classList.remove("collapsed")
 
   Array.from(accessoriesList).forEach(i => {
     btnFunction(i);
   })
 
-  if(localStorage.getItem("styleMenu")) {
-    Array.from(document.querySelector('#'+localStorage.getItem("styleMenu"))).forEach((index, key) => {
-      console.log(index)
-    
-      // Array.from(theParent).forEach((button) => {
-      //   console.log(button)
-      //   // btnImageFunction(button)
-      // })
+  
+  accessoriesMenu.forEach((child, key) => {
+    Array.from(child.children).forEach((index) => {
+      btnImageFunction(index, accessoriesMenu[key])
     })
-  } 
+  })
 
 })
+
+
+
+// if(localStorage.getItem("styleMenu")) {
+//   Array.from(activeMenu.children).forEach((index, key) => {
+//     btnImageFunction(index, key)
+//   })
+// } 
