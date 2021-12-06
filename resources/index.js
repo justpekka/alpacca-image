@@ -1,6 +1,7 @@
 const alpacaImages = document.querySelector('#main-image').children
 const accessoriesList = document.querySelector('.accessories-buttons').children
 const accessoriesMenu = document.querySelectorAll('.style-accessories')
+const assets = "./sources/"
 
 function btnFunction (target) {
   let toggleStatus = target.getAttribute('data-toggle')
@@ -26,14 +27,20 @@ function btnFunction (target) {
 }
 
 function btnImageFunction(button, parent) {
-  let imageTarget = "display-" + parent.getAttribute('data-menu')
-  let imgTag = document.getElementById(imageTarget)
+  let imageTarget = parent.getAttribute('data-menu')
+  let imgTag = document.getElementById(`display-${imageTarget}`)
+  let activatedButton = Array.from(parent.children)
+  activatedButton.forEach(i => {
+    if(i.classList == "active") return i;
+    // console.log(i.classList)
+  })
 
   button.addEventListener('click', e => {
     e.preventDefault()
 
-    // imgTag
-
+    imgTag.setAttribute("src", `${assets}${imageTarget}/${button.getAttribute("data-name")}.png`)
+    // button.classList.toggle("active")
+    console.log(activatedButton)
   })
 }
 
