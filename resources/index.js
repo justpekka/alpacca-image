@@ -10,37 +10,39 @@ function btnFunction (target) {
   
   target.addEventListener('click', (e) => {
     e.preventDefault()
+
+    if(document.getElementById(localStorage.getItem("currentButton"))) document.getElementById(localStorage.getItem("currentButton")).classList.remove("active")
+    if(document.getElementById(localStorage.getItem("styleMenu"))) document.getElementById(localStorage.getItem("styleMenu")).classList.add("collapsed")
     
-    if(toggleStatus == "collapse") {
-      if(document.getElementById(localStorage.getItem("currentButton"))) document.getElementById(localStorage.getItem("currentButton")).classList.remove("active")
-      if(document.getElementById(localStorage.getItem("styleMenu"))) document.getElementById(localStorage.getItem("styleMenu")).classList.add("collapsed")
-      
-      target.classList.toggle("active")
-      menuTarget.classList.toggle("collapsed")
+    target.classList.toggle("active")
+    menuTarget.classList.toggle("collapsed")
 
-      localStorage.setItem("styleMenu", menuTarget.id)
-      localStorage.setItem("currentButton", target.id)
+    localStorage.setItem("currentButton", target.id)
+    localStorage.setItem("styleMenu", menuTarget.id)
 
-      return console.log(localStorage, "migration success!")
-    }
+    return console.log(localStorage, "migration success!")
   })
 }
 
 function btnImageFunction(button, parent) {
   let imageTarget = parent.getAttribute('data-menu')
   let imgTag = document.getElementById(`display-${imageTarget}`)
-  let activatedButton = Array.from(parent.children)
-  activatedButton.forEach(i => {
-    if(i.classList == "active") return i;
-    // console.log(i.classList)
-  })
 
   button.addEventListener('click', e => {
     e.preventDefault()
 
+    let parent = button.parentElement
+    let activatedButton = Array.from(parent.children)
+    activatedButton.forEach((i, k) => {
+      if(i.classList.value.includes("active")) {
+        i.classList.toggle("active")
+      }
+    })
+
     imgTag.setAttribute("src", `${assets}${imageTarget}/${button.getAttribute("data-name")}.png`)
-    // button.classList.toggle("active")
-    console.log(activatedButton)
+    imgTag.setAttribute("alt", `${button.getAttribute("data-name")}`)
+    button.classList.toggle("active")
+    console.log("Image changed.")
   })
 }
 
@@ -52,23 +54,20 @@ window.addEventListener('load', () => {
   if(activeButton) activeButton.classList.add("active")
   if(activeMenu) activeMenu.classList.remove("collapsed")
 
+
   Array.from(accessoriesList).forEach(i => {
     btnFunction(i);
   })
 
-  
   accessoriesMenu.forEach((child, key) => {
     Array.from(child.children).forEach((index) => {
       btnImageFunction(index, accessoriesMenu[key])
     })
   })
 
+  document.getElementById('random-btn').addEventListener('click', e => {
+    e.preventDefault()
+
+    console.log("randomizing...")
+  })
 })
-
-
-
-// if(localStorage.getItem("styleMenu")) {
-//   Array.from(activeMenu.children).forEach((index, key) => {
-//     btnImageFunction(index, key)
-//   })
-// } 
