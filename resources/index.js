@@ -1,11 +1,6 @@
 const alpacaImages = document.querySelector('#main-image').children
 const accessoriesList = document.querySelector('.accessories-buttons').children
-const accessoriesStyle = document.querySelectorAll('.style-accessories')
-
-window.addEventListener('load', () => {
-  document.querySelector('#'+localStorage.getItem("styleMenu")).classList.remove("collapsed")
-  document.querySelector('#'+localStorage.getItem("currentButton")).classList.add("active")
-})
+const accessoriesMenu = document.querySelectorAll('.style-accessories')
 
 function btnFunction (target) {
   let toggleStatus = target.getAttribute('data-toggle')
@@ -16,9 +11,9 @@ function btnFunction (target) {
     e.preventDefault()
     
     if(toggleStatus == "collapse") {
-      document.querySelector('#'+localStorage.getItem("styleMenu")).classList.add("collapsed")
-      document.querySelector('#'+localStorage.getItem("currentButton")).classList.remove("active")
-
+      if(localStorage.getItem("styleMenu")) document.querySelector('#'+localStorage.getItem("styleMenu")).classList.add("collapsed")
+      if(localStorage.getItem("currentButton")) document.querySelector('#'+localStorage.getItem("currentButton")).classList.remove("active")
+      
       target.classList.toggle("active")
       menuTarget.classList.toggle("collapsed")
 
@@ -28,10 +23,32 @@ function btnFunction (target) {
   })
 }
 
-Array.from(accessoriesList).forEach(i => {
-  btnFunction(i);
-})
+function btnImageFunction(button) {
+  button.addEventListener('click', e => {
+    e.preventDefault()
 
-// Array.from(accessoriesStyle).forEach(i => {
-//   btnFunction(i);
-// })
+    console.log(button)
+  })
+}
+
+
+window.addEventListener('load', () => {
+  if(localStorage.getItem("currentButton")) document.querySelector('#'+localStorage.getItem("currentButton")).classList.add("active")
+  if(localStorage.getItem("styleMenu")) document.querySelector('#'+localStorage.getItem("styleMenu")).classList.remove("collapsed")
+
+  Array.from(accessoriesList).forEach(i => {
+    btnFunction(i);
+  })
+
+  if(localStorage.getItem("styleMenu")) {
+    Array.from(document.querySelector('#'+localStorage.getItem("styleMenu"))).forEach((index, key) => {
+      console.log(index)
+    
+      // Array.from(theParent).forEach((button) => {
+      //   console.log(button)
+      //   // btnImageFunction(button)
+      // })
+    })
+  } 
+
+})
