@@ -1,15 +1,37 @@
-// <button class="btn style-btn active" id="menu-hair" data-accessories-list="hair" data-toggle="collapse">Hair</button>
+const alpacaImages = document.querySelector('#main-image').children
+const accessoriesList = document.querySelector('.accessories-buttons').children
+const accessoriesStyle = document.querySelectorAll('.style-accessories')
 
-const alpacaImages = Array.from(document.querySelector('#main-image').children)
-const accessoriesList = document.querySelector('.accessories-buttons')
-const accessoriesStyle = document.querySelector('.style-buttons')
+window.addEventListener('load', () => {
+  document.querySelector('#'+localStorage.getItem("styleMenu")).classList.remove("collapsed")
+  document.querySelector('#'+localStorage.getItem("currentButton")).classList.add("active")
+})
 
-// let button;
-// alpacaImages.forEach(i => {
-//   console.log(i.getAttribute('data-name'))
+function btnFunction (target) {
+  let toggleStatus = target.getAttribute('data-toggle')
+  let dataName = target.getAttribute('data-name')
+  let menuTarget = document.querySelector('#style-'+dataName)
+  
+  target.addEventListener('click', (e) => {
+    e.preventDefault()
+    
+    if(toggleStatus == "collapse") {
+      document.querySelector('#'+localStorage.getItem("styleMenu")).classList.add("collapsed")
+      document.querySelector('#'+localStorage.getItem("currentButton")).classList.remove("active")
+
+      target.classList.toggle("active")
+      menuTarget.classList.toggle("collapsed")
+
+      localStorage.setItem("styleMenu", menuTarget.id)
+      localStorage.setItem("currentButton", target.id)
+    }
+  })
+}
+
+Array.from(accessoriesList).forEach(i => {
+  btnFunction(i);
+})
+
+// Array.from(accessoriesStyle).forEach(i => {
+//   btnFunction(i);
 // })
-
-// const para = document.createElement("button");
-// const node = document.createTextNode("Hair");
-// para.appendChild(node);
-// accessoriesList.appendChild(para);
