@@ -67,7 +67,16 @@ window.addEventListener('load', () => {
 
   let randomButton = document.getElementById('random-btn')
   randomButton.addEventListener('click', e => {
-    e.preventDefault()      
+    e.preventDefault()
+
+    // if(activeButton) {
+    //   activeButton.classList.remove("active")
+    //   localStorage.removeItem("currentButton")
+    // }
+    // if(activeMenu) {
+    //   activeMenu.classList.add("collapsed")
+    //   localStorage.removeItem("styleMenu")
+    // }
         
     console.log("Randomizing image.")
     accessoriesMenu.forEach((child, key) => {
@@ -94,5 +103,23 @@ window.addEventListener('load', () => {
   
 
   let downloadButton = document.getElementById('download-btn')
+  downloadButton.addEventListener('click', e => {
+    let canvas = document.getElementById("myCanvas")
+    // let ctx = canvas.getContext("2d")
+    let images = document.getElementById("main-image").children
+    console.log(images)
+
+    // imageObj1.src = "1.png"
+    // imageObj1.onload = function() {
+    //   ctx.drawImage(imageObj1, 0, 0, 328, 526);
+    //   imageObj2.src = "2.png";
+    //   imageObj2.onload = function() {
+    //     ctx.drawImage(imageObj2, 15, 85, 300, 300);
+    //     var img = canvas.toDataURL("image/png");
+    //     document.write('<img src="' + img + '" width="328" height="526"/>');
+    //   }
+    // };
+    
+  })
 
 }); //Window onload closed
