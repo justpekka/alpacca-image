@@ -65,9 +65,34 @@ window.addEventListener('load', () => {
     })
   })
 
-  document.getElementById('random-btn').addEventListener('click', e => {
-    e.preventDefault()
+  let randomButton = document.getElementById('random-btn')
+  randomButton.addEventListener('click', e => {
+    e.preventDefault()      
+        
+    console.log("Randomizing image.")
+    accessoriesMenu.forEach((child, key) => {
+      let parent = accessoriesMenu[key]
+      let childrens = child.children
+      let randomButton = childrens[Math.floor(Math.random() * childrens.length)]
 
-    console.log("randomizing...")
+      let imageTarget = parent.getAttribute('data-menu')
+      let imgTag = document.getElementById(`display-${imageTarget}`)
+    
+      Array.from(childrens).forEach((i, k) => {
+        if(i.classList.value.includes("active")) {
+          i.classList.toggle("active")
+        }
+      })
+
+      imgTag.setAttribute("src", `${assets}${imageTarget}/${randomButton.getAttribute("data-name")}.png`)
+      imgTag.setAttribute("alt", `${randomButton.getAttribute("data-name")}`)
+      randomButton.classList.toggle("active")
+    })
+
+    console.log("Image randomized successfully.")
   })
-})
+  
+
+  let downloadButton = document.getElementById('download-btn')
+
+}); //Window onload closed
